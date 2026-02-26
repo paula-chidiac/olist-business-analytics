@@ -59,7 +59,7 @@ CREATE TABLE bronze.orders(
 	order_approved_at TIMESTAMP,
 	order_delivered_carrier_date TIMESTAMP,
 	order_delivered_customer_date TIMESTAMP,
-	order_estimated_delivery_date TIMESTAMP
+	order_estimated_delivery_date DATE
 );
 
 DROP TABLE IF EXISTS bronze.order_payments;
