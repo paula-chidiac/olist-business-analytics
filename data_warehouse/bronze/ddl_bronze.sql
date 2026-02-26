@@ -11,7 +11,7 @@ Objetivo do script:
 
 DROP TABLE IF EXISTS bronze.geolocation;
 CREATE TABLE bronze.geolocation (
-	geolocation_zip_code_prefix INT,
+	geolocation_zip_code_prefix TEXT, -- Mantém zeros à esquerda
 	geolocation_lat NUMERIC (9,6),
 	geolocation_lng NUMERIC (9,6),
 	geolocation_city TEXT,
@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS bronze.customers;
 CREATE TABLE bronze.customers (
 	customer_id TEXT,
 	customer_unique_id TEXT,
-	customer_zip_code_prefix INT,
+	customer_zip_code_prefix TEXT,
 	customer_city TEXT,
 	customer_state TEXT
 
@@ -31,7 +31,7 @@ CREATE TABLE bronze.customers (
 DROP TABLE IF EXISTS bronze.sellers;
 CREATE TABLE bronze.sellers (
 	seller_id TEXT,
-	seller_zip_code_prefix INT,
+	seller_zip_code_prefix TEXT,
 	seller_city TEXT,
 	seller_state TEXT
 
