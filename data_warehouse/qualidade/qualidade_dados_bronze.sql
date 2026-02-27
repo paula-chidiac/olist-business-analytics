@@ -257,6 +257,21 @@ SELECT * FROM bronze.sellers WHERE LENGTH(seller_zip_code_prefix::text) <> 5
 
 
 /* ========================================================================== 
+					VERIFICAÇÃO DA TABELA DE AVALIAÇÕES
+============================================================================= */
+
+-- Verificação de duplicatas na chave primária
+SELECT *
+FROM bronze.order_reviews
+WHERE review_id IN (
+    SELECT review_id
+    FROM bronze.order_reviews
+    GROUP BY review_id
+    HAVING COUNT(*) > 1
+)
+ORDER BY review_id;
+	
+/* ========================================================================== 
 					    VERIFICAÇÕES CRUZADAS
 ============================================================================= */
 
