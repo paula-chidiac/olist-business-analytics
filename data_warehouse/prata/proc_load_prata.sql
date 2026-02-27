@@ -8,7 +8,7 @@ Objetivo: Essa procedure é destinada à Camada Prata. Ela trunca as tabelas, in
 Parâmetros: Nenhum.
 
 Exemplo de uso:
-    CALL silver.load_silver();
+    CALL prata.load_prata();
 
 ATENÇÃO: lembre-se de atualizar os destinos dos arquivos antes de rodar o script.
 ===============================================================================
