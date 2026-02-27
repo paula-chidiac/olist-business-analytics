@@ -39,6 +39,7 @@ CREATE TABLE prata.clientes (
 	cidade_cliente 			TEXT,
 	estado_cliente 			TEXT,
 	dwh_data_hora_criacao 	TIMESTAMP DEFAULT NOW()
+
 );
 
 
@@ -48,6 +49,7 @@ CREATE TABLE prata.vendedores (
 	cidade_vendedor 		TEXT,
 	estado_vendedor 		TEXT,
 	dwh_data_hora_criacao 	TIMESTAMP DEFAULT NOW()
+
 );
 
 
@@ -56,13 +58,16 @@ CREATE TABLE prata.produtos (
 	categoria 					TEXT,
 	qtde_caracteres_nome 		INT,
 	qtde_caracteres_descricao 	INT,
-	quantidade_fotos 			INT,
+	qtde_fotos 					INT,
 	peso_g 						INT,
 	comprimento_cm 				INT,
 	altura_cm 					INT,
 	largura_cm 					INT,
 	dwh_data_hora_criacao 		TIMESTAMP DEFAULT NOW()
+
 );
+
+
 
 CREATE TABLE prata.pedidos(
 	id_pedido	 					TEXT PRIMARY KEY,
@@ -89,6 +94,7 @@ CREATE TABLE prata.pedidos_pagamentos (
 	valor_pagamento			NUMERIC(10,2),
 	dwh_data_hora_criacao 	TIMESTAMP DEFAULT NOW(),
 
+
 	CONSTRAINT fk_pgtos_pedido
         FOREIGN KEY (id_pedido)
         REFERENCES prata.pedidos (id_pedido)
@@ -104,6 +110,7 @@ CREATE TABLE prata.pedidos_avaliacoes (
 	data_envio_formulario			DATE,
 	data_hora_resposta_formulario	TIMESTAMP,
 	dwh_data_hora_criacao 			TIMESTAMP DEFAULT NOW(),
+
 
 	CONSTRAINT fk_avaliacoes_pedidos
         FOREIGN KEY (id_pedido)
@@ -124,6 +131,7 @@ CREATE TABLE prata.pedidos_itens (
 	valor_frete 			NUMERIC(10,2),
 	dwh_data_hora_criacao 	TIMESTAMP DEFAULT NOW(),
 
+
 	PRIMARY KEY (id_pedido, id_item_pedido),
 	
 	CONSTRAINT fk_itens_pedidos
@@ -138,4 +146,3 @@ CREATE TABLE prata.pedidos_itens (
 		FOREIGN KEY (id_produto)
 		REFERENCES prata.produtos (id_produto)
 );
-
