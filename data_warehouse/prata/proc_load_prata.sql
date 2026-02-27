@@ -1,9 +1,9 @@
 /*
 ===============================================================================
-Criação de Procedure: Carregamento da camada prata
+Criação de Procedure: Carregamento da Camada Prata
 -===============================================================================
 
-Objetivo: Essa procedure é destinada à camada prata. Ela trunca as tabelas, insere e trata dados vindos da camada bronze.
+Objetivo: Essa procedure é destinada à Camada Prata. Ela trunca as tabelas, insere e trata dados vindos da camada bronze.
 
 Parâmetros: Nenhum.
 
