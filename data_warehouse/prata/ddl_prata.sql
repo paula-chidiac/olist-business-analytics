@@ -10,8 +10,6 @@ Objetivo do script:
 ===============================================================================
 */
 
-CREATE SCHEMA IF NOT EXISTS prata;
-
 DROP TABLE IF EXISTS
 	prata.pedidos_itens,
 	prata.pedidos_avaliacoes,
