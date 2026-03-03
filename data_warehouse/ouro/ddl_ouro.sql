@@ -11,7 +11,9 @@ Objetivo do script:
 
 CREATE SCHEMA IF NOT EXISTS ouro;
 
--- Fato vendas
+/* ========================================================================== 
+                          Crialção da Fato Vendas
+============================================================================= */
 CREATE OR REPLACE VIEW ouro.fato_vendas AS
 WITH pagamentos_agr AS (
     SELECT
@@ -45,7 +47,9 @@ JOIN prata.pedidos p ON pi.id_pedido = p.id_pedido
 LEFT JOIN prata.pedidos_avaliacoes pa ON pi.id_pedido = pa.id_pedido
 LEFT JOIN pagamentos_agr pg ON pi.id_pedido = pg.id_pedido;
 
--- Fato pagamentos
+/* ========================================================================== 
+                          Crialção da Fato Pagamentos
+============================================================================= */
 CREATE OR REPLACE VIEW ouro.fato_pagamentos AS
 SELECT
     id_pedido,
@@ -55,7 +59,9 @@ SELECT
     valor_pagamento
 FROM prata.pedidos_pagamentos;
 
--- Dimensão clientes
+/* ========================================================================== 
+                          Crialção da Dimensão Clientes
+============================================================================= */
 CREATE OR REPLACE VIEW ouro.dim_clientes AS
 SELECT
     id_unico_cliente,
@@ -72,7 +78,10 @@ SELECT
     END AS regiao_cliente
 FROM prata.clientes;
 
--- Dimensão vendedores
+
+/* ========================================================================== 
+                          Crialção da Dimensão Vendedores
+============================================================================= */
 CREATE OR REPLACE VIEW ouro.dim_vendedores AS
 SELECT
     id_vendedor,
@@ -88,7 +97,10 @@ SELECT
     END AS regiao_vendedor
 FROM prata.vendedores;
 
--- Dimensão produtos
+
+/* ========================================================================== 
+                          Crialção da Dimensão Produtos
+============================================================================= */
 CREATE OR REPLACE VIEW ouro.dim_produtos AS
 SELECT
     id_produto,
@@ -113,7 +125,10 @@ SELECT
     END AS metadados_faltando
 FROM prata.produtos;
 
--- Dimensão geolocalização
+
+/* ========================================================================== 
+                          Crialção da Dimensão Geolocalização
+============================================================================= */
 CREATE OR REPLACE VIEW ouro.dim_geolocalizacao AS
 SELECT
     prefixo_cep,
