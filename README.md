@@ -57,5 +57,5 @@ Dentro da pasta data_warehouse, execute os scripts na seguinte sequência:
   1. Utilize os arquivos disponibilizados em `analytics/datasets` ou, caso esteja com o dw montado, exporte cada view com o comando `COPY TO`, como no exemplo:
   ```sql
 -- Exportar fato_vendas
-COPY ouro.fato_vendas TO '/caminho_do_arquivo/fato_vendas.csv' WITH CSV HEADER;
+COPY (SELECT * FROM ouro.fato_vendas) TO '\caminho_do_arquivo\fato_vendas.csv' WITH CSV HEADER;
 ```
