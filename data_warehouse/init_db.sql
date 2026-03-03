@@ -21,15 +21,15 @@ FROM pg_stat_activity
 WHERE datname = 'datawarehouse';
 
 --- AVISO: Relizar operação fora da database;
---- Apaga o datawarehouse;
+--- Apaga olist;
 
 DROP DATABASE IF EXISTS olist CASCADE;
 
---- Cria a database 'datawarehouse'
+--- Cria a database 'olist'
 
 CREATE DATABASE olist;
 
---- AVISO: Realizar operação DENTRO de 'datawarehouse'
+--- AVISO: Realizar operação DENTRO de 'olist'
 --- Cria os schemas
 
 CREATE SCHEMA bronze;
