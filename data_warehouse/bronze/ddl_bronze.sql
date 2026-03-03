@@ -9,8 +9,6 @@ Objetivo do script:
 ===============================================================================
 */
 
-CREATE SCHEMA IF NOT EXISTS bronze
-
 DROP TABLE IF EXISTS bronze.geolocation;
 CREATE TABLE bronze.geolocation (
 	geolocation_zip_code_prefix TEXT, --Preserva zeros à esquerda
